@@ -5,7 +5,8 @@ import javax.ws.rs.QueryParam;
 public class ParameterBean {
 
 	private @QueryParam("country") String country;
-
+	private @QueryParam("q") String query;
+	
 	public ParameterBean() {
 
 	}
@@ -16,6 +17,14 @@ public class ParameterBean {
 
 	public void setCountry(String country) {
 		this.country = country;
+	}
+
+	public String getQuery() {
+		return query;
+	}
+
+	public void setQuery(String query) {
+		this.query = query;
 	}
 
 }

@@ -7,12 +7,23 @@ import com.learn.NewsApplication.model.ResponseBean;
 
 public class TopHeadlinesService {
 
-	Logger log= Logger.getLogger(TopHeadlinesService.class);
+	private NewsClient client;
+	private ResponseBean result;
+	public TopHeadlinesService() {
+		client = new NewsClient();
+	}
+
+	Logger log = Logger.getLogger(TopHeadlinesService.class);
+
 	public ResponseBean getTHByCountry(String country) {
-		// TODO Auto-generated method stub
+
+		result = client.getTHByCountry(country);
+		return result;
+	}
+
+	public ResponseBean getTHByQuery(String query) {
 		
-		NewsClient client = new NewsClient();
-		ResponseBean result =client.getTHByCountry(country);
+		 result = client.getTHByQuery(query);
 		return result;
 	}
 
